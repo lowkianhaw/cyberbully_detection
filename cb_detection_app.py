@@ -328,7 +328,7 @@ class Dataset(torch.utils.data.Dataset):
 
 selected = option_menu(
     menu_title=None,
-    options = ["Home", "Application", "Resources","Contacts"],
+    options = ["Home", "Application"],
     icons = ["house","card-text","file-earmark-code","envelope"],
     default_index=0,
     orientation="horizontal",
