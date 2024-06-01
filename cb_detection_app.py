@@ -335,7 +335,7 @@ selected = option_menu(
     )
 
 if selected =="Home":
-    st.title("Welcome to the Cyberbullying Checker Application!")
+    st.title("Welcome to CyberSafe - Your Guardian Against Cyberbullying!")
     st.markdown("""
                 Cyberbullying sabotages the environment of Online Social Media. 
                 
@@ -350,57 +350,12 @@ if selected =="Home":
     home_image = Image.open('Picture2.png')
     st.image(home_image, caption="")
     
-    st.markdown("""
-            ---
-            ***Credits:***
-            > *The image was taken from the Slidesgo presentation template from [here](https://slidesgo.com/theme/international-day-against-bullying-at-school-including-cyberbullying#search-cyberbullying&position-1&results-10&rs=search), with the icons created by Falticons and infographics and images by Freepik*
-           
-            ---
-            """)
-
-if selected == "Resources":
-    st.title("Resources")
-    st.markdown("""
-                ---
-                ***You may check out the source codes.***
-                >  Here's the [link](https://github.com/HwaiTengTeoh/NLP_TextClassification_Cyberbullying_Detection) to the Github Repository 
-                ---
-                ***You may download the model too.***
-                > Here's the [link](https://huggingface.co/teoh0821/cb_detection) to the HuggingFace Repository
-                ---
-    """)
-    
-if selected =="Contacts":
-    st.title("Contacts")
-    st.markdown("""
-                ---
-                #### Teoh Hwai Teng
-                ##### ***Postgraduate, Master of Data Science, Faculty of Computer Science and Information Technology, University of Malaya***
-                
-                > Email: teoh0821@gmail.com
-                
-                > Github: https://github.com/HwaiTengTeoh
-                
-                ---
-                #### Associate Prof Dr. Kasturi Dewi A/P Varathan
-                ##### ***Department of Information System, Faculty of Computer Science and Information Technology, University of Malaya***
-                
-                > Email: kasturi@um.edu.my
-         
-                ---
-                """)
-
-    
-    
-  
 
 if selected == "Application":   
     st.title("Try out the application!")
     st.markdown("""
-                #### It’s simple to kick start!
-                ##### Just input your text or paste any post that you spotted online. 
-                ##### Our model will analyze and check the text or post for you in ***one click***. 
-                ##### Please wait for few seconds, the application will be loaded soon ⏳
+                ##### Type or paste messages here to check for cyberbullying.
+                ##### Click 'Check' to detect cyberbullying in the message. 
         """)
     
     app_image = Image.open('Picture1.jpg')
@@ -457,7 +412,7 @@ if selected == "Application":
                                                 remove_punctuation=True,
                                                 lemmatise=True)
 
-        with st.spinner("Almost there.. Analyzing your input text.."):
+        with st.spinner("Analyzing your input text.."):
             input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
 
             # Create torch dataset
@@ -473,16 +428,7 @@ if selected == "Application":
             text_pred = np.where(np.argmax(raw_pred, axis=1)==1,"Cyberbullying Post","Non-cyberbullying Post")
 
             if text_pred.tolist()[0] == "Non-cyberbullying Post":
-                st.success("No worry! Our model says this is a Non-cyberbullying Post!", icon="✅")
+                st.success("This message is all clear! 😊 Keep spreading positivity!")
             elif text_pred.tolist()[0] == "Cyberbullying Post":
-                st.warning("Warning!! Our model says this is a Cyberbullying Post!", icon="⚠️")
-            #st.write("Our model says this is a ", text_pred.tolist()[0])
+                st.warning("This message contains cyberbullying content. Let's spread kindness instead. 🚫")
         
-        
-    st.markdown("""
-            ---
-            ***Disclaimer:***
-            > *The information provided on this application does not and is not intended to constitute legal advice; instead. The authors are not liable or responsible for any errors or omissions in the content of this site. All information, content, materials, and outcome available on this application are just a prototype provided for general informational purposes only. The information contained in this application is provided on an "as is" basis with no guarantees of completeness, accuracy, usefulness, or timeliness.*
-           
-            ---
-            """)
