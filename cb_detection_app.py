@@ -403,7 +403,7 @@ if selected == "Application":
                 ##### Please wait for few seconds, the application will be loaded soon ⏳
         """)
     
-    app_image = Image.open('Picture1.png')
+    app_image = Image.open('Picture1.jpg')
     st.image(app_image, caption="")
 
     # Instantiate
