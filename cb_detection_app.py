@@ -24,7 +24,7 @@ st.markdown("""
     If you wonder what makes a comment hurtful, check the comment here.
 """)
 
-home_image = Image.open('Picture1.png')
+home_image = Image.open('Picture1.jpg')
 st.image(home_image, caption="")
 
 # User input
