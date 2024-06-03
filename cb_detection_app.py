@@ -8,10 +8,10 @@ from transformers import DistilBertTokenizerFast, DistilBertForSequenceClassific
 import torch
 from PIL import Image
 
-# Ensure NLTK data is downloaded
-# nltk.download('stopwords')
-# nltk.download('punkt')
-# nltk.download('averaged_perceptron_tagger')
+Ensure NLTK data is downloaded
+nltk.download('stopwords')
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
 
 # Load model and tokenizer
 model_dir = 'teoh0821/cb_detection'
