@@ -332,8 +332,8 @@ class Dataset(torch.utils.data.Dataset):
                 
                 """)
   
-    home_image = Image.open('Picture2.png')
-    st.image(home_image, caption="")
+    # home_image = Image.open('Picture2.png')
+    # st.image(home_image, caption="")
     
 
     st.title("Try out the application!")
