@@ -1,4 +1,3 @@
-
 #############################
 # Import Libraries/ Modules #
 #############################
@@ -326,6 +325,15 @@ class Dataset(torch.utils.data.Dataset):
     def __len__(self):
         return len(self.encodings["input_ids"])
 
+selected = option_menu(
+    menu_title=None,
+    options = ["Home", "Application", "Resources","Contacts"],
+    icons = ["house","card-text","file-earmark-code","envelope"],
+    default_index=0,
+    orientation="horizontal",
+    )
+
+if selected =="Home":
     st.title("Welcome to CyberSafe - Your Guardian Against Cyberbullying!")
     st.markdown("""
                 If you wonder what makes a comment hurtful, check the comment here.
@@ -335,12 +343,6 @@ class Dataset(torch.utils.data.Dataset):
     home_image = Image.open('Picture2.png')
     st.image(home_image, caption="")
     
-
-    st.title("Try out the application!")
-    st.markdown("""
-                ##### Type or paste messages here to check for cyberbullying.
-                ##### Click 'Check' to detect cyberbullying in the message. 
-        """)
 
     # Instantiate
     tool = language_tool_python.LanguageTool('en-US')
@@ -393,7 +395,7 @@ class Dataset(torch.utils.data.Dataset):
                                                 remove_punctuation=True,
                                                 lemmatise=True)
 
-        with st.spinner("Analyzing your input text.."):
+        with st.spinner("Almost there.. Analyzing your input text.."):
             input_text_tokenized = tokenizer(cleaned_input_text, padding=True, truncation=True, max_length=512)
 
             # Create torch dataset
@@ -412,4 +414,6 @@ class Dataset(torch.utils.data.Dataset):
                 st.success("This message is all clear! 😊 Keep spreading positivity!")
             elif text_pred.tolist()[0] == "Cyberbullying Post":
                 st.warning("This message contains cyberbullying content. Let's spread kindness instead. 🚫")
+            #st.write("Our model says this is a ", text_pred.tolist()[0])
         
+       
