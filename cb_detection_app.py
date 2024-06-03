@@ -337,13 +337,7 @@ selected = option_menu(
 if selected =="Home":
     st.title("Welcome to CyberSafe - Your Guardian Against Cyberbullying!")
     st.markdown("""
-                Cyberbullying sabotages the environment of Online Social Media. 
-                
-                A detection application is mandatory to prevent anyone from making Online Social Media a playground for them to commit cyberbullying. 
-                
-                At the same time, preventing someone from suffering victimization is more than crucial. 
-                
-                This application was developed to put an end to cyberbullying posts. 
+                If you wonder what makes a comment hurtful, check the comment here.
                 
                 """)
   
