@@ -341,9 +341,6 @@ class Dataset(torch.utils.data.Dataset):
                 ##### Type or paste messages here to check for cyberbullying.
                 ##### Click 'Check' to detect cyberbullying in the message. 
         """)
-    
-    app_image = Image.open('Picture1.jpg')
-    st.image(app_image, caption="")
 
     # Instantiate
     tool = language_tool_python.LanguageTool('en-US')
