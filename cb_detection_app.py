@@ -325,15 +325,8 @@ class Dataset(torch.utils.data.Dataset):
     def __len__(self):
         return len(self.encodings["input_ids"])
 
-selected = option_menu(
-    menu_title=None,
-    options = ["Home", "Application", "Resources","Contacts"],
-    icons = ["house","card-text","file-earmark-code","envelope"],
-    default_index=0,
-    orientation="horizontal",
-    )
 
-if selected =="Home":
+
     st.title("Welcome to CyberSafe - Your Guardian Against Cyberbullying!")
     st.markdown("""
                 If you wonder what makes a comment hurtful, check the comment here.
