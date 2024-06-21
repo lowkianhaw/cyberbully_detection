@@ -12,7 +12,7 @@ spacytextblob
 nltk
 emot
 fuzzywuzzy
-streamlit==1.16.0
+streamlit==1.30.0
 streamlit-option-menu
 pandas
 torch
